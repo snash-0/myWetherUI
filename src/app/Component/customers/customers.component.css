@@ -1,0 +1,14 @@
+.table{
+    width: 100%;
+    border: solid;
+    border-radius: 15px;
+}
+.tablebody{
+    text-align: center;
+}
+
+.customers{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

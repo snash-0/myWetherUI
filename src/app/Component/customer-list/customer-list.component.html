@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Created Date</th>
+        </tr>
+    </thead>
+    <tbody class="tablebody">
+        @for (customer of customerList(); track customer.customersid) {
+            <tr>
+                <td>{{ customer.customersid }}</td>
+                <td>{{ customer.customername }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.createddate }}</td>
+                <td>
+                    <button (click)="editCustomer(customer)">Edit</button>
+                    @if (customer.customersid !== undefined) {
+                        <button (click)="deleteCustomer(customer.customersid)">Delete</button>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

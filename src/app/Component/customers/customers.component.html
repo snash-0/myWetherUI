@@ -1,0 +1,14 @@
+<div class="customers">
+    <p>customers List!</p>
+    <button (click)="addCustomers()">Add Customers</button>
+</div>
+
+
+@if (isCreatingCustomer){
+    <app-create-customer></app-create-customer>
+}@else{
+    <app-customer-list
+        [customerList]="customers"
+        (customerDeleted)="removeCustomer($event)">
+    </app-customer-list>
+} 

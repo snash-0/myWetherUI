@@ -1,0 +1,31 @@
+<form [formGroup]="customerForm" (ngSubmit)="OnSubmit()">
+    <div>
+        <label for="id">ID:</label>
+        <input type="number" id="id" name="id" formControlName="id">
+        @if (customerForm.get('id')?.invalid && customerForm.get('id')?.touched) {
+            <small class="error">ID is required.</small>
+        }
+    </div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" formControlName="name">
+        @if (customerForm.get('name')?.invalid && customerForm.get('name')?.touched) {
+            <small class="error">Name is required.</small>
+        }
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" formControlName="email">
+        @if (customerForm.get('email')?.invalid && customerForm.get('email')?.touched) {
+            <small class="error">Please enter a valid email address.</small>
+        }
+    </div>
+    <div>
+        <label for="createdDate">Created Date:</label>
+        <input type="date" id="createdDate" name="createdDate" formControlName="createdDate">
+        @if (customerForm.get('createdDate')?.invalid && customerForm.get('createdDate')?.touched) {
+            <small class="error">Created date is required.</small>
+        }
+    </div>
+    <button type="submit">Create Customer</button>
+</form>
